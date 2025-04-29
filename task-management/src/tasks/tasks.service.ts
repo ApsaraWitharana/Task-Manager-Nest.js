@@ -32,6 +32,11 @@ export class TasksService {
 
   deleteTask(id:string){
    this.tasks =  this.tasks.filter(task => task.id! == id)
-   
+  }
+
+  updateTaskStatus(id:string,taskStatus:TaskStatus):Task{
+   let task = this.getTaskById(id)
+   task.status = taskStatus
+   return task
   }
 }
